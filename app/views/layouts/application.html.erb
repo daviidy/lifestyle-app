@@ -10,19 +10,20 @@
     <%= stylesheet_link_tag "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" %>
   </head>
 
-  <body>
+  <body class="">
     <header>
       <!-- desktop nav -->
       <nav class="navbar navbar-expand-sm bg-white border-bottom fixed-top first-nav">
         <ul class="navbar-nav flex-row align-items-center navbar-desktop">
           <li class="nav-item ml-3">
-            <img src="./assets/images/lifestyle.png" alt="logo">
+            <h3 class="acumin-gray-color font-weight-bold">liFEsTlye</h3>
           </li>
         </ul>
 
         <ul class="navbar-nav ml-auto align-items-center">
+          <% if current_user %>
           <li class="nav-item">
-            <a href="#" class="p-2 text-dark nav-link">
+            <a href="/" class="p-2 text-dark nav-link">
               Home
             </a>
           </li>
@@ -33,7 +34,7 @@
           </li>
           <li class="nav-item">
             <a href="#" class="p-2 bg-acumin-color text-white rounded nav-link">
-              Write a post
+              Write an article
             </a>
           </li>
           <li class="nav-item dropdown">
@@ -41,11 +42,17 @@
               <img class="rounded-circle img-fluid user-avatar" src="https://secure.gravatar.com/avatar/9c275cba24f7c939201cda28f832f8e0?s=80" alt="User">
             </a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Link 1</a>
-              <a class="dropdown-item" href="#">Link 2</a>
-              <a class="dropdown-item" href="#">Link 3</a>
+              <%= link_to "Logout", "/logout", class: "nav-link text-dark"%>
             </div>
           </li>
+          <% else %>
+          <li class="nav-item">
+            <%= link_to "Sign Up", new_user_path, class: "nav-link text-dark" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign In", "/login", class: "nav-link text-dark" %>
+          </li>
+          <% end %>
         </ul>
       </nav>
       <!-- mobile nav -->
@@ -57,7 +64,7 @@
             </a>
           </li>
           <li class="nav-item ml-3">
-            <img src="./assets/images/lifestyle.png" alt="logo">
+            <h3 class="acumin-gray-color font-weight-bold">liFEsTlye</h3>
           </li>
           <li class="nav-item">
             <a href="#">
@@ -68,7 +75,99 @@
       </nav>
     </header>
     <main id="page-container">
-    <%= yield %>
+      <% if flash[:notice] %>
+      <div class="row status">
+        <div class="col-12">
+          <div class="alert alert-success mr-auto ml-auto w-50 mt-3">
+            <%= notice %>
+          </div>
+        </div>
+      </div>
+      <% end %>
+
+      <div class="container-fluid content">
+        <div class="row">
+          <nav class="col-6 navbar bg-acumin-gray-color side-menu d-none">
+            <ul class="navbar-nav text-white">
+              <% if current_user %>
+              <li class="nav-item">
+                <a href="" class="nav-link text-uppercase">
+                  homepage
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link text-uppercase">
+                  articles
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link text-uppercase">
+                  write a post
+                </a>
+              </li>
+
+              <hr class="text-white border border-white w-100">
+
+              <li class="nav-item">
+                <a href="" class="nav-link text-uppercase">
+                  <img class="rounded-circle img-fluid user-avatar" src="https://secure.gravatar.com/avatar/9c275cba24f7c939201cda28f832f8e0?s=80" alt="User">
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="" class="nav-link">
+                  Log out
+                </a>
+              </li>
+              <% else %>
+              <li class="nav-item">
+                <%= link_to "Sign Up", new_user_path, class: "nav-link text-uppercase" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Sign In", "/login", class: "nav-link text-uppercase" %>
+              </li>
+              <% end %>
+            </ul>
+          </nav>
+          <div id="overlay"></div>
+        </div>
+
+        <%= yield %>
+      </div>
+
+      <footer class="bg-acumin-gray-color container-fluid">
+          <ul class="row">
+            <li class="nav-item col-12 col-md-4">
+              <a href="#">
+                <h3 class="text-white font-weight-bold">liFEsTlye</h3>
+              </a>
+            </li>
+            <li class="nav-item col-12 col-md-4">
+              <a href="nav-item">
+                Privacy Policy
+              </a>
+              <a href="nav-item">
+                Terms & conditions
+              </a>
+              <p class="text-white">
+                Copyright 2014. All rights reserved
+              </p>
+            </li>
+            <li class="nav-item col-12 col-md-4">
+              <div class="row d-flex justify-content-end">
+                <div class="col-1">
+                  <i class="fab fa-facebook acumin-color"></i>
+                </div>
+                <div class="col-1">
+                  <i class="fab fa-twitter-square acumin-color"></i>
+                </div>
+                <div class="col-1">
+                  <i class="fab fa-instagram-square acumin-color"></i>
+                </div>
+              </div>
+            </li>
+          </ul>
+      </footer>
     </main>
   </body>
 </html>
