@@ -2,12 +2,15 @@
 <html>
   <head>
     <title>LifestyleApp</title>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" %>
+    <%=javascript_include_tag "https://kit.fontawesome.com/d86848cfe0.js"  %>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
   </head>
 
   <body class="">
@@ -59,9 +62,7 @@
       <nav class="navbar navbar-expand-sm bg-white border-bottom fixed-top d-md-none">
         <ul class="navbar-nav flex-row align-items-center w-100 d-flex justify-content-between">
           <li class="nav-item">
-            <a href="#">
-              <i class="fas fa-bars hamburger acumin-gray-color"></i>
-            </a>
+            <i class="fas fa-bars hamburger acumin-gray-color"></i>
           </li>
           <li class="nav-item ml-3">
             <h3 class="acumin-gray-color font-weight-bold">liFEsTlye</h3>
@@ -169,5 +170,17 @@
           </ul>
       </footer>
     </main>
+    <script>
+      $( document ).ready(function() {
+        $('.hamburger').click(function() {
+          console.log('dave');
+          if ($(window).width() < 768) {
+            $('.side-menu').toggleClass('d-none');
+            $('#overlay').fadeToggle(300);
+          }
+        });
+      });
+
+    </script>
   </body>
 </html>
