@@ -7,9 +7,68 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" %>
   </head>
 
   <body>
+    <header>
+      <!-- desktop nav -->
+      <nav class="navbar navbar-expand-sm bg-white border-bottom fixed-top first-nav">
+        <ul class="navbar-nav flex-row align-items-center navbar-desktop">
+          <li class="nav-item ml-3">
+            <img src="./assets/images/lifestyle.png" alt="logo">
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto align-items-center">
+          <li class="nav-item">
+            <a href="#" class="p-2 text-dark nav-link">
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="p-2 text-dark nav-link">
+              Articles
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="p-2 bg-acumin-color text-white rounded nav-link">
+              Write a post
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              <img class="rounded-circle img-fluid user-avatar" src="https://secure.gravatar.com/avatar/9c275cba24f7c939201cda28f832f8e0?s=80" alt="User">
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="#">Link 1</a>
+              <a class="dropdown-item" href="#">Link 2</a>
+              <a class="dropdown-item" href="#">Link 3</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <!-- mobile nav -->
+      <nav class="navbar navbar-expand-sm bg-white border-bottom fixed-top d-md-none">
+        <ul class="navbar-nav flex-row align-items-center w-100 d-flex justify-content-between">
+          <li class="nav-item">
+            <a href="#">
+              <i class="fas fa-bars hamburger acumin-gray-color"></i>
+            </a>
+          </li>
+          <li class="nav-item ml-3">
+            <img src="./assets/images/lifestyle.png" alt="logo">
+          </li>
+          <li class="nav-item">
+            <a href="#">
+              <i class="fas fa-search hamburger acumin-gray-color"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main id="page-container">
     <%= yield %>
+    </main>
   </body>
 </html>
