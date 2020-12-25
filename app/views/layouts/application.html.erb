@@ -8,8 +8,10 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" %>
+    <%= stylesheet_link_tag "https://use.typekit.net/coi1grn.css" %>
+    <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/css/select2.min.css" %>
     <%=javascript_include_tag "https://kit.fontawesome.com/d86848cfe0.js"  %>
+
     <meta name="viewport" content="width=device-width,initial-scale=1">
   </head>
 
@@ -36,13 +38,14 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="p-2 bg-acumin-color text-white rounded nav-link">
-              Write an article
-            </a>
+            <%= link_to "Create Article", new_article_path, class: "p-2 bg-acumin-color text-white rounded nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Create Category", new_category_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-              <img class="rounded-circle img-fluid user-avatar" src="https://secure.gravatar.com/avatar/9c275cba24f7c939201cda28f832f8e0?s=80" alt="User">
+              <i class="far fa-user-circle"></i>
             </a>
             <div class="dropdown-menu">
               <%= link_to "Logout", "/logout", class: "nav-link text-dark"%>
@@ -110,8 +113,8 @@
               <hr class="text-white border border-white w-100">
 
               <li class="nav-item">
-                <a href="" class="nav-link text-uppercase">
-                  <img class="rounded-circle img-fluid user-avatar" src="https://secure.gravatar.com/avatar/9c275cba24f7c939201cda28f832f8e0?s=80" alt="User">
+                <a class="nav-link text-uppercase">
+                  <i class="far fa-user-circle"></i>
                 </a>
               </li>
 
@@ -170,6 +173,9 @@
           </ul>
       </footer>
     </main>
+
+    <%=javascript_include_tag "https://cdn.jsdelivr.net/npm/select2@4.0.12/dist/js/select2.min.js"  %>
+
     <script>
       $( document ).ready(function() {
         $('.hamburger').click(function() {
@@ -179,6 +185,11 @@
             $('#overlay').fadeToggle(300);
           }
         });
+      });
+
+
+      $(document).ready(function() {
+          $('.js-example-basic-multiple').select2();
       });
 
     </script>

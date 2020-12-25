@@ -10,10 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_23_140049) do
+ActiveRecord::Schema.define(version: 2020_12_25_191308) do
 
   create_table "articles", force: :cascade do |t|
-    t.integer "authorId"
+    t.integer "author_id"
     t.string "title"
     t.text "text"
     t.string "image"
@@ -28,9 +28,17 @@ ActiveRecord::Schema.define(version: 2020_12_23_140049) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.text "body"
+    t.integer "user_id"
+    t.integer "article_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "organizations", force: :cascade do |t|
-    t.integer "categoryId"
-    t.integer "articleId"
+    t.integer "category_id"
+    t.integer "article_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -42,8 +50,8 @@ ActiveRecord::Schema.define(version: 2020_12_23_140049) do
   end
 
   create_table "votes", force: :cascade do |t|
-    t.integer "userId"
-    t.integer "articleId"
+    t.integer "user_id"
+    t.integer "article_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

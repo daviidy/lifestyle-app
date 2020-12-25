@@ -8,76 +8,17 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-6 col-md-3" style="background: url(https://images.unsplash.com/photo-1608607261815-84bcae9cad8f?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60) center no-repeat; background-size: cover;">
+  <% @categories.each do |category| %>
+  <% if category.articles.count > 0 %>
+  <div class="col-6 col-md-3" style="background: url(<%= category.articles.last.image %>) center no-repeat; background-size: cover;">
     <div class="gradient" href="#"></div>
     <div class="category-title text-white font-weight-bold pt-2">
-      <h3 class="position-relative">Business</h3>
+      <%= link_to category.name, category_path(category), class: "text-white position-relative" %>
     </div>
     <div class="recent-article font-weight-bold text-white pb-2">
-      <p class="position-relative">Early morning with Yaya Toure</p>
+      <%= link_to category.articles.last.title, article_path(category.articles.last), class: "text-white position-relative" %>
     </div>
   </div>
-  <div class="col-6 col-md-3" style="background: url(https://images.unsplash.com/photo-1579869847557-1f67382cc158?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8c29jaWFsJTIwbWVkaWF8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60) center no-repeat; background-size: cover;">
-    <div class="gradient" href="#"></div>
-    <div class="category-title text-white font-weight-bold pt-2">
-      <h3 class="position-relative">Business</h3>
-    </div>
-    <div class="recent-article font-weight-bold text-white pb-2">
-      <p class="position-relative">Early morning with Yaya Toure</p>
-    </div>
-  </div>
-  <div class="col-6 col-md-3" style="background: url(https://images.unsplash.com/photo-1594737996820-af7654631790?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8YmxhY2slMjB3b21hbnxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60) center no-repeat; background-size: cover;">
-    <div class="gradient" href="#"></div>
-    <div class="category-title text-white font-weight-bold pt-2">
-      <h3 class="position-relative">Business</h3>
-    </div>
-    <div class="recent-article font-weight-bold text-white pb-2">
-      <p class="position-relative">Early morning with Yaya Toure</p>
-    </div>
-  </div>
-  <div class="col-6 col-md-3" style="background: url(https://images.unsplash.com/photo-1593642634524-b40b5baae6bb?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60) center no-repeat; background-size: cover;">
-    <div class="gradient" href="#"></div>
-    <div class="category-title text-white font-weight-bold pt-2">
-      <h3 class="position-relative">Business</h3>
-    </div>
-    <div class="recent-article font-weight-bold text-white pb-2">
-      <p class="position-relative">Early morning with Yaya Toure</p>
-    </div>
-  </div>
-  <div class="col-6 col-md-3" style="background: url(https://images.unsplash.com/photo-1593642634524-b40b5baae6bb?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60) center no-repeat; background-size: cover;">
-    <div class="gradient" href="#"></div>
-    <div class="category-title text-white font-weight-bold pt-2">
-      <h3 class="position-relative">Business</h3>
-    </div>
-    <div class="recent-article font-weight-bold text-white pb-2">
-      <p class="position-relative">Early morning with Yaya Toure</p>
-    </div>
-  </div>
-  <div class="col-6 col-md-3" style="background: url(https://images.unsplash.com/photo-1593642634524-b40b5baae6bb?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60) center no-repeat; background-size: cover;">
-    <div class="gradient" href="#"></div>
-    <div class="category-title text-white font-weight-bold pt-2">
-      <h3 class="position-relative">Business</h3>
-    </div>
-    <div class="recent-article font-weight-bold text-white pb-2">
-      <p class="position-relative">Early morning with Yaya Toure</p>
-    </div>
-  </div>
-  <div class="col-6 col-md-3" style="background: url(https://images.unsplash.com/photo-1593642634524-b40b5baae6bb?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60) center no-repeat; background-size: cover;">
-    <div class="gradient" href="#"></div>
-    <div class="category-title text-white font-weight-bold pt-2">
-      <h3 class="position-relative">Business</h3>
-    </div>
-    <div class="recent-article font-weight-bold text-white pb-2">
-      <p class="position-relative">Early morning with Yaya Toure</p>
-    </div>
-  </div>
-  <div class="col-6 col-md-3" style="background: url(https://images.unsplash.com/photo-1593642634524-b40b5baae6bb?ixid=MXwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60) center no-repeat; background-size: cover;">
-    <div class="gradient" href="#"></div>
-    <div class="category-title text-white font-weight-bold pt-2">
-      <h3 class="position-relative">Business</h3>
-    </div>
-    <div class="recent-article font-weight-bold text-white pb-2">
-      <p class="position-relative">Early morning with Yaya Toure</p>
-    </div>
-  </div>
+  <% end %>
+  <% end %>
 </div>
