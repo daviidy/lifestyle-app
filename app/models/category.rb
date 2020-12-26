@@ -4,4 +4,6 @@ class Category < ApplicationRecord
   validates_presence_of :name
   validates_length_of :name, minimum: 3
   validates_presence_of :priority
+  validates :priority, uniqueness: true
+  validates :name, uniqueness: true
 end
