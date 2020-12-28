@@ -227,12 +227,8 @@ DEPENDENCIES
   rspec-rails
   sass-rails (>= 6)
   selenium-webdriver
-<<<<<<< HEAD
-  sqlite3
-=======
   shoulda-matchers
   sqlite3 (~> 1.4)
->>>>>>> f9e5687ddfdff2accb70f528bd5dc9d153fbebea
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)
