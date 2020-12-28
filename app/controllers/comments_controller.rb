@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
   before_action :authorize, only: %i[create]
 
@@ -7,7 +9,7 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id
 
     @comment.save
-    flash.notice = "Your comment has been added"
+    flash.notice = 'Your comment has been added'
     redirect_to article_path(@comment.article)
   end
 

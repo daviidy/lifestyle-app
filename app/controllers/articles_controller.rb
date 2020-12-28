@@ -1,9 +1,9 @@
+# frozen_string_literal: true
+
 class ArticlesController < ApplicationController
-  before_action :authorize, only: %i[index, show, new, create]
+  before_action :authorize, only: %i[index show new create]
 
-  def index
-
-  end
+  def index; end
 
   def new
     @article = current_user.articles.build
@@ -28,6 +28,6 @@ class ArticlesController < ApplicationController
   private
 
   def article_params
-    params.require(:article).permit(:title, :text, :image, category_ids:[])
+    params.require(:article).permit(:title, :text, :image, category_ids: [])
   end
 end
