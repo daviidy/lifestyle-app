@@ -5,7 +5,7 @@ RSpec.describe Article, type: :model do
     described_class.new(
       title: 'Anything',
       text: 'Anything',
-      location: 'Anything'
+      image: 'Anything'
     )
   end
 
@@ -21,7 +21,7 @@ RSpec.describe Article, type: :model do
       subject.text = nil
       expect(subject).to_not be_valid
     end
-    it 'is not valid without a location' do
+    it 'is not valid without an image' do
       subject.image = nil
       expect(subject).to_not be_valid
     end

@@ -10,7 +10,7 @@ RSpec.describe Category, type: :model do
 
   describe 'Validations' do
     it 'is valid' do
-      expect(subject).to_not be_valid
+      expect(subject).to be_valid
     end
   end
 
