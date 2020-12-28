@@ -70,7 +70,7 @@ Run these tests with those commands:
 - `rspec spec/features/authenticate_user_spec.rb`
 - `rspec spec/features/create_category_spec.rb`
 
-- add this to your Gemfile
+- Add this to your Gemfile
 ```
 group :development, :test do
   gem "database_cleaner"

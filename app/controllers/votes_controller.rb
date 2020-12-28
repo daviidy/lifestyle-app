@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+
 
 class VotesController < ApplicationController
   before_action :authorize, only: %i[add_vote]

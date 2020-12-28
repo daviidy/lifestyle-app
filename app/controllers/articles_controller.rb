@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+
 
 class ArticlesController < ApplicationController
   before_action :authorize, only: %i[index show new create]
