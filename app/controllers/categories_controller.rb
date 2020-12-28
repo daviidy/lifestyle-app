@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.order('priority ASC').includes(:articles).select do |e|
-      e.articles.count > 0
+      e.articles.count.positive?
     end
     if Vote.count.positive?
       @vote = Vote.all.group(:article_id).count.max_by { |k, v| }.first
