@@ -46,6 +46,13 @@ group :development do
   gem 'web-console', '>= 3.3.0'
 end
 
+group :development, :test do
+  gem 'database_cleaner'
+  gem 'rack_session_access'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
+end
+
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
