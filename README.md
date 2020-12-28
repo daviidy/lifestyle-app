@@ -1,4 +1,4 @@
-# private-events
+# lifestyle-app
 We had to build a website based on lifestyle articles.
 - To use the app, you have to sign in or log in
 - Authenticated user:
@@ -20,11 +20,11 @@ We had to build a website based on lifestyle articles.
 
 ## 🚀 Our Project
 
-Our project can be found at https://github.com/daviidy/private-events
+Our project can be found at https://github.com/daviidy/lifestyle-app
 
 ## Live Demo
 
-You can find the demo [here](https://mysterious-thicket-97365.herokuapp.com/)
+You can find the demo [here](https://morning-spire-14613.herokuapp.com/)
 
 ## Gems used
 
