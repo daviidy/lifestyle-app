@@ -32,6 +32,7 @@ header .navbar {
 }
 
 body {
+  background: radial-gradient(#40404b, #111118) rgba(34,34,40,0.94);
   font-family: acumin-pro, sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -194,7 +195,7 @@ footer {
 }
 
 .content {
-  padding-bottom: 10rem;
+  padding-bottom: 5rem;
 }
 
 /* media queries */
