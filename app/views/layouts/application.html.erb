@@ -94,19 +94,7 @@
             <ul class="navbar-nav text-white">
               <% if current_user %>
               <li class="nav-item">
-                <a href="" class="nav-link text-uppercase">
-                  homepage
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link text-uppercase">
-                  articles
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link text-uppercase">
-                  write a post
-                </a>
+                <%= link_to "Create Article", new_article_path, class: "nav-link text-uppercase" %>
               </li>
 
               <hr class="text-white border border-white w-100">
@@ -118,9 +106,7 @@
               </li>
 
               <li class="nav-item">
-                <a href="" class="nav-link">
-                  Log out
-                </a>
+                <%= link_to "Logout", "/logout", class: "nav-link"%>
               </li>
               <% else %>
               <li class="nav-item">
