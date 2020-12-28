@@ -1,5 +1,3 @@
-
-
 require 'rails_helper'
 
 RSpec.describe 'Creating a category', type: :feature do

@@ -1,5 +1,3 @@
-
-
 class ArticlesController < ApplicationController
   before_action :authorize, only: %i[index show new create]
 

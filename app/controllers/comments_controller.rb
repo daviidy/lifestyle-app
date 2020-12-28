@@ -1,5 +1,3 @@
-
-
 class CommentsController < ApplicationController
   before_action :authorize, only: %i[create]
 

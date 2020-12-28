@@ -1,5 +1,3 @@
-
-
 class VotesController < ApplicationController
   before_action :authorize, only: %i[add_vote]
 

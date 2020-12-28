@@ -1,5 +1,3 @@
-
-
 class Category < ApplicationRecord
   has_many :organizations, foreign_key: :category_id
   has_many :articles, through: :organizations
