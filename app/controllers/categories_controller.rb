@@ -2,8 +2,9 @@ class CategoriesController < ApplicationController
   before_action :authorize, only: %i[index]
 
   def index
-    @categories = Category.all.order('priority ASC').includes(:articles)
-    @articles_categories_count = Organization.group('organizations.category_id').count
+    @categories = Category.all.order('priority ASC').includes(:articles).select do |e|
+      e.articles.count > 0
+    end
     if Vote.count.positive?
       @vote = Vote.all.group(:article_id).count.max_by { |k, v| }.first
       @article = Article.find(@vote)

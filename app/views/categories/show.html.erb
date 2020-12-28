@@ -1,5 +1,4 @@
 <div class="row featured-section">
-  <% if @category.articles.count > 0 %>
   <% @category.articles.order('id DESC').each do |article| %>
   <div class="col-12 col-md-6 bg-white">
     <div class="row h-100">
@@ -26,6 +25,5 @@
       </div>
     </div>
   </div>
-  <% end %>
   <% end %>
 </div>

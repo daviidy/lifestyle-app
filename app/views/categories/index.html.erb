@@ -9,7 +9,7 @@
 </div>
 <div class="row">
   <% @categories.each do |category| %>
-  <% if @articles_categories_count[category.id] > 0 %>
+
   <div class="col-6 col-md-3" style="background: url(<%= category.articles.last.image %>) center no-repeat; background-size: cover;">
     <div class="gradient" href="#"></div>
     <div class="category-title text-white font-weight-bold pt-2">
@@ -19,6 +19,5 @@
       <%= link_to category.articles.last.title, article_path(category.articles.last), class: "text-white position-relative" %>
     </div>
   </div>
-  <% end %>
   <% end %>
 </div>
