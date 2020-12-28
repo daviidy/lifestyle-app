@@ -2,7 +2,7 @@ class CategoriesController < ApplicationController
   before_action :authorize, only: %i[index]
 
   def index
-    @categories = Category.all.order('priority ASC').includes(:articles).select do |e|
+    @categories = Category.order('priority ASC').includes(:articles).select do |e|
       e.articles.count > 0
     end
     if Vote.count.positive?
@@ -30,7 +30,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
+    @category = Category.includes(:articles).find(params[:id])
   end
 
   private

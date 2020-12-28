@@ -26,6 +26,10 @@ Our project can be found at https://github.com/daviidy/lifestyle-app
 
 You can find the demo [here](https://morning-spire-14613.herokuapp.com/)
 
+## Video Link
+
+You can find the presentation [here](https://www.loom.com/share/bc2e1207d8ae42dcaaa95d8f2e45c3aa)
+
 ## Gems used
 
 - [shoulda matchers](https://github.com/thoughtbot/shoulda-matchers)
