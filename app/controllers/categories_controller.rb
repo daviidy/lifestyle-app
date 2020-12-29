@@ -30,7 +30,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.includes(:articles).find(params[:id])
+    @category = Category.includes(:articles => :author).find(params[:id])
   end
 
   private

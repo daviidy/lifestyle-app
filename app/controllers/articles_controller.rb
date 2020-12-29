@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.includes(:comments).find(params[:id])
+    @article = Article.includes(:comments, :author).find(params[:id])
     @comment = Comment.new
     @comment.article_id = @article.id
   end
