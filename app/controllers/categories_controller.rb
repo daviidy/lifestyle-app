@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
       e.articles.count.positive?
     end
     if Vote.count.positive?
-      @vote = Vote.all.group(:article_id).count.max_by { |k, v| v }.first
+      @vote = Vote.all.group(:article_id).count.max_by { |_k, v| v }.first
       @article = Article.find(@vote)
     elsif Article.count.positive?
       @article = Article.first
@@ -30,7 +30,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.includes(:articles => :author).find(params[:id])
+    @category = Category.includes(articles: :author).find(params[:id])
   end
 
   private
