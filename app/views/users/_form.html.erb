@@ -1,15 +1,19 @@
-<%= form_tag(info, {:class => 'col-12 col-md-4 m-md-auto p-0 bg-white text-dark rounded'}) do |f| %>
-<%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+<%= form_for(@user, :html => {:class => 'col-12 col-md-4 m-md-auto p-0 bg-white text-dark rounded'}) do |f| %>
+    <% @user.errors.full_messages.each do |error| %>
+    <div class="alert alert-danger">
+      <%= error %>
+    </div>
+    <% end %>
     <div class="p-3">
-      <strong>Name</strong><br />
+      <strong><%= f.label :name, "Name" %></strong><br />
       <div class="input-group mb-2">
         <div class="input-group-prepend">
           <div class="input-group-text">
             @
           </div>
         </div>
-        <%= text_field_tag :user[name], "", class: 'form-control' %><br>
+        <%= f.text_field :name, placeholder: "eg. dave", class: 'form-control' %><br>
       </div>
     </div>
-    <%= submit_tag 'Submit', {:class => 'w-100 text-center text-uppercase bg-acumin-color p-3 text-white'} %>
+    <%= f.submit 'Sign Up', {:class => 'w-100 text-center text-uppercase bg-acumin-color p-3 text-white'} %>
 <% end %>
