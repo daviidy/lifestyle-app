@@ -54,7 +54,7 @@ end
 - Open terminal and navigate to root folder (/lifestyle-app).
 - Once in root folder
   - type: `rails s` in terminal and in browser
-  - run `bundle install`, `rails db:create`, and `rails db:migrate`
+  - run `bundle install`, `yarn install`, `rails db:create`, and `rails db:migrate`
   - type localhost:3000/ in address bar.
 
 ## How to run the test suite

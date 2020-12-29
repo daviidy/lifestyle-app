@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
       e.articles.count.positive?
     end
     if Vote.count.positive?
-      @vote = Vote.all.group(:article_id).count.max_by { |k, v| }.first
+      @vote = Vote.all.group(:article_id).count.max_by { |k, v| v }.first
       @article = Article.find(@vote)
     elsif Article.count.positive?
       @article = Article.first
