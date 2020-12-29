@@ -30,31 +30,16 @@ You can find the demo [here](https://morning-spire-14613.herokuapp.com/)
 
 You can find the presentation [here](https://www.loom.com/share/bc2e1207d8ae42dcaaa95d8f2e45c3aa)
 
-## Gems used
-
-- [shoulda matchers](https://github.com/thoughtbot/shoulda-matchers)
-```
-group :development, :test do
-  gem "database_cleaner"
-  gem "rspec-rails"
-  gem 'shoulda-matchers'
-  gem 'rack_session_access'
-end
-
-group :test do
-  gem "capybara", '>= 2.15'
-  gem "selenium-webdriver"
-end
-
-```
-
 ## To run the project in local
 
 - clone the repository from here [repo link](https://github.com/daviidy/lifestyle-app)
 - Open terminal and navigate to root folder (/lifestyle-app).
 - Once in root folder
   - type: `rails s` in terminal and in browser
-  - run `bundle install`, `yarn install`, `rails db:create`, and `rails db:migrate`
+  - run `bundle install`
+  - run `yarn install`
+  - run`rails db:create`
+  - run `rails db:migrate`
   - type localhost:3000/ in address bar.
 
 ## How to run the test suite
@@ -73,23 +58,6 @@ Run these tests with those commands:
 ### integration tests
 - `rspec spec/features/authenticate_user_spec.rb`
 - `rspec spec/features/create_category_spec.rb`
-
-- Add this to your Gemfile
-```
-group :development, :test do
-  gem "database_cleaner"
-  gem "rspec-rails"
-  gem 'shoulda-matchers'
-  gem 'rack_session_access'
-end
-
-group :test do
-  gem "capybara", '>= 2.15'
-  gem "selenium-webdriver"
-end
-
-```
-- run `bundle install`
 
 
 ## 👨🏽‍💻 👨🏿‍💻 Creator
