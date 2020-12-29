@@ -10,7 +10,7 @@ module ApplicationHelper
 
   def show_votes?(article)
     return unless article.votes.count.positive?
-    
+
     content_tag(:p, "#{article.votes.count} vote(s)",
                 class: 'w-50 m-auto font-weight-bold mt-3 alert alert-success rounded p-1')
   end
